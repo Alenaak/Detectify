@@ -1,0 +1,133 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/camera_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ImageView (Icon) before TextView -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="25dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/detect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/heading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <!-- Heading Text at the Top -->
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/file"
+        android:text="Detectify"
+        android:textColor="@color/darkbluecolor"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Rounded Container for Camera Result, Detection, and Inference Time -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rounded_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonPanel"
+        app:layout_constraintHeight_percent="0.95"
+    android:layout_marginEnd="20dp"
+    android:paddingTop="18dp"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingBottom="8dp"
+    android:background="@drawable/rounded_background"
+    app:layout_constraintTop_toBottomOf="@id/heading">
+
+    <!-- Camera Preview View -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/inferenceTime"
+        app:layout_constraintDimensionRatio="2.9:4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Overlay View (on top of the camera preview) -->
+        <com.yolo.snapdetect.Overlay
+            android:id="@+id/overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2.8:4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+    <!-- Inference Time Text -->
+    <TextView
+        android:id="@+id/inferenceTime"
+        android:text="100ms"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Buttons Section Below Rounded Container -->
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/white"
+    android:layout_marginBottom="20dp"
+android:paddingVertical="4dp"
+android:foregroundGravity=""
+android:id="@+id/buttonPanel"
+app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ToggleButton
+        android:id="@+id/isGpu"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:textColor="@color/darkbluecolor"
+        android:textOff="@string/gpu"
+        android:textOn="@string/gpu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
