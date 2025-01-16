@@ -33,9 +33,8 @@ This  Android app allows users to detect objects in real-time using both the fro
 3. View detected objects with live bounding boxes and labels.
 
 
-<img src="https://github.com/Alenaak/ImageTextExtractor/blob/main/images/1.png" alt="Application Interface" width="600"/>
-<img src="https://github.com/Alenaak/ImageTextExtractor/blob/main/images/2.png" alt="Application Interface" width="600"/>
-<img src="https://github.com/Alenaak/ImageTextExtractor/blob/main/images/3.png" alt="Application Interface" width="600"/>
+<img src="https://github.com/Alenaak/Detectify/blob/main/images/SCREENSHOT.png" alt="Application Interface" width="600"/>
+
 
 ---
 
